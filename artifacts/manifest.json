@@ -1,0 +1,65 @@
+{
+  "fixture_id": "agent-bounties-settled-worked-example",
+  "spec": "action-ref-v1 (argentum-core, docs/spec/action-ref.md)",
+  "preimage": {
+    "agent_id": "worked-example.agent-bounties-action-ref-anchor",
+    "action_type": "agentbounties.bounty.settled",
+    "scope": "agentbounties:bounty_id:0xa9ecd20c70da07dea26ff531dcbd3422d04ff921fcbc872a7fbb3062832a1677:round:1",
+    "timestamp": "2026-07-16T20:20:21.000Z"
+  },
+  "jcs_payload": "{\"action_type\":\"agentbounties.bounty.settled\",\"agent_id\":\"worked-example.agent-bounties-action-ref-anchor\",\"scope\":\"agentbounties:bounty_id:0xa9ecd20c70da07dea26ff531dcbd3422d04ff921fcbc872a7fbb3062832a1677:round:1\",\"timestamp\":\"2026-07-16T20:20:21.000Z\"}",
+  "action_ref": "2100c3b322cc926ead04aab87c8f6aaf400d355c4c8f47df2c242a694e6e0424",
+  "anchor_ref_bytes32": "0x2100c3b322cc926ead04aab87c8f6aaf400d355c4c8f47df2c242a694e6e0424",
+  "anchor_registry": "0x49fEcA52bC634a9Ab773226D16619deC547794aa",
+  "anchor_chain": "Base mainnet (chainId 8453)",
+  "envelope": {
+    "packet_version": "1.0",
+    "action_ref": "2100c3b322cc926ead04aab87c8f6aaf400d355c4c8f47df2c242a694e6e0424",
+    "hash_algo": "sha256",
+    "preimage_format": "jcs-rfc8785-v1",
+    "preimage": {
+      "agent_id": "worked-example.agent-bounties-action-ref-anchor",
+      "action_type": "agentbounties.bounty.settled",
+      "scope": "agentbounties:bounty_id:0xa9ecd20c70da07dea26ff531dcbd3422d04ff921fcbc872a7fbb3062832a1677:round:1",
+      "timestamp": "2026-07-16T20:20:21.000Z"
+    },
+    "capability": "bounty_settled",
+    "settlement": {
+      "bounty_id": "0xa9ecd20c70da07dea26ff531dcbd3422d04ff921fcbc872a7fbb3062832a1677",
+      "round": 1,
+      "solver": "0x1dbe963c9cc0189c7d0594f0d06377dab555cef3",
+      "solver_reward": 100000,
+      "claim_bond_returned": 10000,
+      "timeout_bond_bonus": 0,
+      "verifier_reward": 10000,
+      "submission_hash": "0x800a7d7ccdfbdc9857d853781a8aa4ffc1f2fec33bb34c44ce30faaa6d50b4da",
+      "evidence_hash": "0x8933412ea994fbd6232c03ce680c745c559d1d533df5badb29d6f6d0407e60bd",
+      "policy_hash": "0x1d7e68562787f29017d89446a47c8ee70f82c0b9208271445f0d9f73293e7158",
+      "verification_hash": "0x97442e138eabd45266a8785e75cad9850cae90b8d381b3d0a79dded1bc123317"
+    },
+    "generated_at_utc": "2026-07-16T20:20:21.000Z"
+  },
+  "settlement": {
+    "bounty_id": "0xa9ecd20c70da07dea26ff531dcbd3422d04ff921fcbc872a7fbb3062832a1677",
+    "round": 1,
+    "solver": "0x1dbe963c9cc0189c7d0594f0d06377dab555cef3",
+    "solver_reward": 100000,
+    "claim_bond_returned": 10000,
+    "timeout_bond_bonus": 0,
+    "verifier_reward": 10000,
+    "submission_hash": "0x800a7d7ccdfbdc9857d853781a8aa4ffc1f2fec33bb34c44ce30faaa6d50b4da",
+    "evidence_hash": "0x8933412ea994fbd6232c03ce680c745c559d1d533df5badb29d6f6d0407e60bd",
+    "policy_hash": "0x1d7e68562787f29017d89446a47c8ee70f82c0b9208271445f0d9f73293e7158",
+    "verification_hash": "0x97442e138eabd45266a8785e75cad9850cae90b8d381b3d0a79dded1bc123317"
+  },
+  "source_event": {
+    "protocol": "NSPG13/agent-bounties (agentbounties.app)",
+    "event": "BountySettled",
+    "contract_source": "contracts/base-escrow/src/AgentBounty.sol:148-158",
+    "bounty_contract": "0x3d0e396dd4c07c8a7dff13ec93e59c4e7e5a270e",
+    "tx_hash": "0xdc0dc865c4ee5b404b49dfce985c3964bb4098fe011d26abdd4e7789d26c46fa",
+    "block_number": 48721937,
+    "chain": "Base mainnet (8453)"
+  },
+  "provenance": "Worked example over a REAL, already-settled on-chain event -- not a test mock. Every settlement field is the literal BountySettled log data, independently confirmed via eth_getTransactionReceipt against Base mainnet (topic0/topic1/topic2/topic3 + abi-decoded data, see PROVENANCE.md). agent_id and the action_ref preimage wrapper are this repo's own construction. No live interaction with the NSPG13/agent-bounties protocol beyond reading its public chain state and its own published API. No claim of integration, adoption, or endorsement."
+}
