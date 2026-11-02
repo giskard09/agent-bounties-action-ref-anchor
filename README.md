@@ -65,6 +65,7 @@ reinterprets them.
 | `artifacts/` | The canonical instance: `manifest.json` (preimage, settlement, envelope) and `anchor.json` (tx/block, once anchored). |
 | `scripts/anchor.sh` | The equivalent `cast` command to anchor `action_ref`. |
 | `PROVENANCE.md` | Exact tx/block/log provenance of the underlying settlement. Read it. |
+| `evidence-records/rama-agent-bounties-001.json` | The `narko4u/evidence-record-spec` evidence record wrapping this worked example, anchored separately — see "Evidence record" below. |
 
 ## Reproduce
 
@@ -89,6 +90,21 @@ bash scripts/anchor.sh
 - Anchor status: **anchored** — Base mainnet, tx
   [`0x7c8692c0...`](https://basescan.org/tx/0x7c8692c003b80a48bb8123ae6965e26464d271ee2041404cc025e0f15e5fcaba),
   block 50277597.
+
+## Evidence record (narko4u/evidence-record-spec grading)
+
+[`evidence-records/rama-agent-bounties-001.json`](evidence-records/rama-agent-bounties-001.json)
+wraps this worked example's settlement citation in
+[`narko4u/evidence-record-spec`](https://github.com/narko4u/evidence-record-spec)'s
+schema and derives grade **E4** against that spec's own validator. Its
+`record` field, canonicalized as `JSON.dumps(record, sort_keys=True,
+separators=(',',':'), ensure_ascii=False)` + SHA-256, is anchored on Base
+mainnet: tx
+[`0x5f31c443...`](https://basescan.org/tx/0x5f31c4430e2dcf9cc11e550182b827c65a95767821c1da74611cdd647d33094e),
+block 53265581, digest
+`ccee67f9648e03b5a5ce912000c54886bc451495ac809a1b25438b7a0a2d292f` —
+independently verifiable byte-for-byte from the file in this repo, same
+posture as the rest of this series.
 
 ## License
 

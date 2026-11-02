@@ -1,0 +1,54 @@
+{
+  "case_id": "rama-agent-bounties-001",
+  "expect": {
+    "decision": "accepted",
+    "derived_grade": "E4"
+  },
+  "record": {
+    "schema_version": "0.1.0",
+    "record_id": "er-rama-agent-bounties-001",
+    "agent_id": "worked-example.agent-bounties-action-ref-anchor",
+    "actor_chain": [
+      "operator:rama",
+      "agent:agent-bounties-worked-example"
+    ],
+    "timestamp": "2026-07-16T20:20:21.000Z",
+    "observation": {
+      "source": "external_authority",
+      "relationship": "direct",
+      "directness": "direct_observation"
+    },
+    "verification": {
+      "vantage": "substrate",
+      "method": "reconstructed",
+      "basis": "substrate_reconstructed",
+      "basis_engines": [
+        "external_authority"
+      ]
+    },
+    "reconciliation": {
+      "agent_claim": "worked example cites NSPG13/agent-bounties BountySettled(bounty_id=0xa9ecd20c..., round=1, solver=0x1dbe963c..., 4 settlement hashes) as the real, already-settled event action_ref wraps",
+      "boundary_observation": "Base mainnet RPC (mainnet.base.org, eth_getTransactionReceipt against tx 0xdc0dc865..., independent of agentbounties.app's own API) returns the identical topic0/topic1/topic2/topic3 and ABI-decoded data: same bounty_id, round, solver, and 4 settlement hashes",
+      "state": "agreement"
+    },
+    "integrity": {
+      "signed": false,
+      "chain_linked": true,
+      "timestamped": true,
+      "verifiable_by": [
+        "anyone-with-public-base-mainnet-rpc-access"
+      ]
+    },
+    "declared_vs_observed": {
+      "permitted": "n/a — this worked example does not evidence a permission-scoped action of our own agent; it cites a pre-existing third-party settlement",
+      "occurred": "BountySettled emitted by NSPG13's bounty contract 0x3d0e396dd4c07c8a7dff13ec93e59c4e7e5a270e, tx 0xdc0dc865..., block 48721937, independently re-verified via direct RPC call to mainnet.base.org in this session (byte-exact match on all logged fields)"
+    },
+    "sampling": {
+      "sampled": false,
+      "audit_required": true
+    },
+    "provenance": [
+      "base-mainnet-tx:0xdc0dc865c4ee5b404b49dfce985c3964bb4098fe011d26abdd4e7789d26c46fa"
+    ]
+  }
+}
